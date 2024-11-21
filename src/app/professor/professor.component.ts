@@ -1,25 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfessorService } from 'src/app/professor/services/professor.service';
+import { ProfessoresService } from '../professor/services/professor.service';
+
+interface Professor {
+  id: number;
+  nome: string;
+  disciplina: string;
+  sala: string;
+  turma: string;
+  status: number;
+}
 
 @Component({
-  selector: 'app-professor',
+  selector: 'app-professores',
   templateUrl: './professor.component.html',
-  styleUrls: ['./professor.component.css'],
+  styleUrls: ['./professor.component.css']
 })
-export class ProfessorComponent implements OnInit {
-  professores: any[] = []; // Lista para armazenar dados do backend
+export class ProfessoresComponent implements OnInit {
+  professores: Professor[] = [];
 
-  constructor(private professorService: ProfessorService) { }
+  constructor(private professorService: ProfessoresService) { }
 
   ngOnInit(): void {
-    this.professorService.getProfessores().subscribe({
-      next: (data) => {
-        console.log('Dados recebidos do backend:', data);
-        this.professores = data; // Salva os dados retornados
+    this.professorService.getProfessores().subscribe(
+      (data) => {
+        this.professores = data;
       },
-      error: (err) => {
-        console.error('Erro ao buscar dados do backend:', err);
-      },
-    });
+      (error) => {
+        console.error('Erro ao carregar os professores', error);
+      }
+    );
   }
 }

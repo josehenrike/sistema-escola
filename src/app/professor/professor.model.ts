@@ -1,8 +1,7 @@
 export interface Professor {
-    id: number;
     nome: string;
-    cpf: string;
-    titulacao: string;
+    disciplina: string;
+    sala: string;
+    turma: string;
     status: number;
-    disciplinas: string[];
 }
