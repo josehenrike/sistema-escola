@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfessoresService } from '../professor/services/professor.service';
+import { ProfessorService } from '../professor/service/professor.service';
 
 interface Professor {
   id: number;
@@ -18,13 +18,13 @@ interface Professor {
 export class HomeComponent implements OnInit {
   professores: Professor[] = [];
 
-  constructor(private professorService: ProfessoresService) { }
+  constructor(private professorService: ProfessorService) { }
 
   ngOnInit(): void {
-    // Chamando o serviço para obter a lista de professores
+
     this.professorService.getProfessores().subscribe(
       (data) => {
-        this.professores = data;  // Armazenando os dados na variável professores
+        this.professores = data;
       },
       (error) => {
         console.error('Erro ao carregar os dados dos professores', error);

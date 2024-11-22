@@ -1,7 +1,28 @@
 <div class="container">
-    <h1>Lista de Professores</h1>
-    <p>Aqui é a lista de professores onde pode adicionar, editar ou excluir!</p>
-    <ul>
-        <li *ngFor="let professor of professores">{{ professor.nome }}</li>
-    </ul>
+    <h2>Professores Cadastrados</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Titulação</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let professor of professores">
+                <td>{{ professor.id }}</td>
+                <td>{{ professor.nome }}</td>
+                <td>{{ professor.cpf }}</td>
+                <td>{{ professor.titulacao }}</td>
+                <td>{{ getStatusLabel(professor.status) }}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm">Editar</button>
+                    <button class="btn btn-danger btn-sm">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

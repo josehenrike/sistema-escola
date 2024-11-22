@@ -1,23 +1,23 @@
 <div class="container">
-    <h2>Disciplinas Cadastradas</h2>
+    <h2>Turmas Cadastradas</h2>
     <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Código</th>
                 <th>Nome</th>
-                <th>Local</th>
-                <th>Status</th>
+                <th>Dia da Semana</th>
+                <th>Inicio</th>
+                <th>Fim</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let disciplina of disciplinas">
-                <td>{{ disciplina.id }}</td>
-                <td>{{ disciplina.codigo }}</td>
-                <td>{{ disciplina.nome }}</td>
-                <td>{{ disciplina.periodo }}</td>
-                <td>{{ getStatusLabel(disciplina.status) }}</td>
+            <tr *ngFor="let turma of turmas">
+                <td>{{ turma.id }}</td>
+                <td>{{ turma.nome }}</td>
+                <td>{{ turma.dia }}</td>
+                <td>{{ turma.inicio }}</td>
+                <td>{{ turma.fim }}</td>
                 <td>
                     <button class="btn btn-primary btn-sm">Editar</button>
                     <button class="btn btn-danger btn-sm">Excluir</button>

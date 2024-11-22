@@ -1,23 +1,23 @@
 <div class="container">
-    <h2>Disciplinas Cadastradas</h2>
+    <h2>Salas Cadastradas</h2>
     <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Código</th>
                 <th>Nome</th>
                 <th>Local</th>
+                <th>Capacidade</th>
                 <th>Status</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let disciplina of disciplinas">
-                <td>{{ disciplina.id }}</td>
-                <td>{{ disciplina.codigo }}</td>
-                <td>{{ disciplina.nome }}</td>
-                <td>{{ disciplina.periodo }}</td>
-                <td>{{ getStatusLabel(disciplina.status) }}</td>
+            <tr *ngFor="let sala of salas">
+                <td>{{ sala.id }}</td>
+                <td>{{ sala.nome }}</td>
+                <td>{{ sala.local }}</td>
+                <td>{{ sala.capacidade }}</td>
+                <td>{{ getStatusLabel(sala.status) }}</td>
                 <td>
                     <button class="btn btn-primary btn-sm">Editar</button>
                     <button class="btn btn-danger btn-sm">Excluir</button>

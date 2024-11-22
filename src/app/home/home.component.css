@@ -1,3 +1,21 @@
 .container {
     margin: 20px;
 }
+
+.container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 20px;
+}

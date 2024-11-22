@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DisciplinaComponent } from './disciplina/disciplina.component';
+import { SalaComponent } from './sala/sala.component';
+import { TurmaComponent } from './turma/turma.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { DisciplinaComponent } from './disciplina/disciplina.component';
     ProfessoresComponent,
     HomeComponent,
     NavComponent,
-    DisciplinaComponent
+    DisciplinaComponent,
+    SalaComponent,
+    TurmaComponent
   ],
   imports: [
     BrowserModule,

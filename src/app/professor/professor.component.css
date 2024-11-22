@@ -2,7 +2,72 @@
     margin: 20px;
 }
 
+.container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .container ul {
     list-style-type: none;
     padding: 0;
+}
+
+.container table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.container table th,
+.container table td {
+    padding: 10px;
+}
+
+.container table th {
+    background-color: #f2f2f2;
+}
+
+.container table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.container table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.container table button {
+    margin-right: 5px;
+}
+
+.container table button:last-child {
+    margin-right: 0;
+}
+
+.container table button.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.container table button.btn-primary:hover {
+    background-color: #0069d9;
+}
+
+.container table button.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.container table button.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.container table button.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
 }

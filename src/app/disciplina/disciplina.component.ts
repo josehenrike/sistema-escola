@@ -11,6 +11,10 @@ export class DisciplinaComponent implements OnInit {
   disciplinas: any[] = [];
   constructor(private disciplinaService: DisciplinaService) { }
 
+  getStatusLabel(status: number): string {
+    return status === 1 ? 'Ativo' : 'Inativo';
+  }
+
   ngOnInit(): void {
     this.loadDisciplinas();
   }
