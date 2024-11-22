@@ -334,3 +334,4 @@ C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\obj\Debug\net8.0
 C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\obj\Debug\net8.0\SistemaEscolar.pdb
 C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\obj\Debug\net8.0\SistemaEscolar.genruntimeconfig.cache
 C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\obj\Debug\net8.0\ref\SistemaEscolar.dll
+C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\obj\Debug\net8.0\SistemaEscolar.sourcelink.json
