@@ -49,13 +49,18 @@
     margin-right: 0;
 }
 
-.container table button.add {
+.container button.add {
     background-color: #28a745;
     color: #fff;
 }
 
-.container table button.add:hover {
+.container button.add:hover {
     background-color: #218838;
+}
+
+.container button.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
 }
 
 .container table button.btn-primary {

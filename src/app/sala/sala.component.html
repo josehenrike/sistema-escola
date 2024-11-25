@@ -1,5 +1,6 @@
 <div class="container">
     <h2>Salas Cadastradas</h2>
+    <button class="add btn-sm">Adicionar Sala</button>
     <table class="table">
         <thead>
             <tr>
@@ -19,7 +20,6 @@
                 <td>{{ sala.capacidade }}</td>
                 <td>{{ getStatusLabel(sala.status) }}</td>
                 <td>
-                    <button class="add btn-sm">Adicionar</button>
                     <button class="btn btn-primary btn-sm">Editar</button>
                     <button class="btn btn-danger btn-sm">Excluir</button>
                 </td>

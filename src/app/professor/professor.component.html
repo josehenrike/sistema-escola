@@ -1,5 +1,6 @@
 <div class="container">
     <h2>Professores Cadastrados</h2>
+    <button class="add btn-sm">Adicionar Professor</button>
     <table class="table">
         <thead>
             <tr>
@@ -19,7 +20,6 @@
                 <td>{{ professor.titulacao }}</td>
                 <td>{{ getStatusLabel(professor.status) }}</td>
                 <td>
-                    <button class="add btn-sm">Adicionar</button>
                     <button class="btn btn-primary btn-sm">Editar</button>
                     <button class="btn btn-danger btn-sm">Excluir</button>
                 </td>
