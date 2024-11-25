@@ -335,3 +335,10 @@ C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\obj\Debug\net8.0
 C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\obj\Debug\net8.0\SistemaEscolar.genruntimeconfig.cache
 C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\obj\Debug\net8.0\ref\SistemaEscolar.dll
 C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\obj\Debug\net8.0\SistemaEscolar.sourcelink.json
+C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\bin\Debug\net8.0\Dapper.dll
+C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\bin\Debug\net8.0\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\jose.henrike\Desktop\Dev\SistemaEscolar\SistemaEscolar\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Data.SqlClient.dll

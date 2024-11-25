@@ -258,6 +258,16 @@
     ]
   },
   {
+    "ContainingType": "RelatorioController",
+    "Method": "GetProfessoresDetalhes",
+    "RelativePath": "api/relatorios/professores-detalhes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SistemaEscolar.Controllers.SalaController",
     "Method": "BuscarTodasSalas",
     "RelativePath": "api/Sala",
