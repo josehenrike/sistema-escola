@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DisciplinaComponent } from './disciplina/disciplina.component';
 import { SalaComponent } from './sala/sala.component';
 import { TurmaComponent } from './turma/turma.component';
+import { RelatorioComponent } from './relatorio/relatorio.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TurmaComponent } from './turma/turma.component';
     NavComponent,
     DisciplinaComponent,
     SalaComponent,
-    TurmaComponent
+    TurmaComponent,
+    RelatorioComponent
   ],
   imports: [
     BrowserModule,

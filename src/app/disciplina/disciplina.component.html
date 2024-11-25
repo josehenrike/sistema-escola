@@ -6,7 +6,7 @@
                 <th>ID</th>
                 <th>Código</th>
                 <th>Nome</th>
-                <th>Local</th>
+                <th>Periodo</th>
                 <th>Status</th>
                 <th>Ações</th>
             </tr>
@@ -19,6 +19,7 @@
                 <td>{{ disciplina.periodo }}</td>
                 <td>{{ getStatusLabel(disciplina.status) }}</td>
                 <td>
+                    <button class="add btn-sm">Adicionar</button>
                     <button class="btn btn-primary btn-sm">Editar</button>
                     <button class="btn btn-danger btn-sm">Excluir</button>
                 </td>

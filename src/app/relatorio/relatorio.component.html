@@ -1,0 +1,25 @@
+<div class="container" *ngIf="dados.length > 0; else carregando">
+    <table>
+        <thead>
+            <tr>
+                <th>Professor</th>
+                <th>Disciplina</th>
+                <th>Turma</th>
+                <th>Sala</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dado of dados">
+                <td>{{ dado.Professor }}</td>
+                <td>{{ dado.Disciplina }}</td>
+                <td>{{ dado.Turma }}</td>
+                <td>{{ dado.Sala }}</td>
+                <td>{{ getStatusLabel(dado.ProfessorStatus) }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template #carregando>
+    <p>Carregando dados...</p>
+</ng-template>
