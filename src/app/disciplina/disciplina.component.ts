@@ -46,7 +46,6 @@ export class DisciplinaComponent implements OnInit {
     this.loadDisciplinas();
   }
 
-  // Método para buscar as disciplinas
   loadDisciplinas(): void {
     this.disciplinaService.getDisciplinas().subscribe(
       (data) => {

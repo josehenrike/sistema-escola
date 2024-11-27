@@ -9,7 +9,18 @@ import { ProfessorService } from './service/professor.service';
 export class ProfessoresComponent implements OnInit {
 
   professores: any[] = [];
+  adicionandoProfessor: boolean = false;
+  novoProfessor: any = {
+    nome: '',
+    cpf: '',
+    status: true,
+    disciplina: '',
+    sala: '',
+    turma: '',
+    titulacao: ''
+  };
   loading: boolean = true;
+  professorSelecionado: any;
 
   constructor(private professorService: ProfessorService) { }
 
@@ -17,7 +28,35 @@ export class ProfessoresComponent implements OnInit {
     return status === 1 ? 'Ativo' : 'Inativo';
   }
 
-  professorSelecionado: any = null;
+  mostrarFormularioAdicionar(): void {
+    this.adicionandoProfessor = true;
+    this.novoProfessor = {
+      nome: '',
+      cpf: '',
+      status: true,
+      disciplina: '',
+      sala: '',
+      turma: '',
+      titulacao: ''
+    };
+  }
+
+  adicionarProfessor(): void {
+    this.professorService.adicionarProfessor(this.novoProfessor).subscribe(
+      (professorAdicionado) => {
+        console.log('Professor adicionado:', professorAdicionado);
+        this.professores.push(professorAdicionado);
+        this.adicionandoProfessor = false;
+      },
+      (error) => {
+        console.error('Erro ao adicionar professor:', error);
+      }
+    );
+  }
+
+  cancelarAdicao(): void {
+    this.adicionandoProfessor = false;
+  }
 
   editarProfessor(professor: any): void {
     this.professorSelecionado = { ...professor };

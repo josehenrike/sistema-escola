@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Professores Cadastrados</h2>
     <div class="btn">
-        <button class="add btn-sm">Adicionar Professor</button>
+        <button class="add btn-sm" (click)="mostrarFormularioAdicionar()">Adicionar Professor</button>
     </div>
     <table class="table">
         <thead>
@@ -26,6 +26,32 @@
             </tr>
         </tbody>
     </table>
+
+    <div *ngIf="adicionandoProfessor" class="form-container">
+        <h3>Adicionar Professor</h3>
+        <form (ngSubmit)="adicionarProfessor()">
+            <div>
+                <label>Nome:</label>
+                <input [(ngModel)]="novoProfessor.nome" name="nome" class="form-control" required />
+            </div>
+            <div>
+                <label>CPF:</label>
+                <input [(ngModel)]="novoProfessor.cpf" name="cpf" class="form-control" required />
+            </div>
+            <div>
+                <label>Status:</label>
+                <select [(ngModel)]="novoProfessor.status" name="status" class="form-control">
+                    <option [value]="true">Ativo</option>
+                    <option [value]="false">Inativo</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarAdicao()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
 
     <div *ngIf="professorSelecionado" class="form-container">
         <h3>Editar Professor</h3>
