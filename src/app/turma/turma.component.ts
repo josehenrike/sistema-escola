@@ -11,6 +11,33 @@ export class TurmaComponent implements OnInit {
 
   constructor(private turmaService: TurmaService) { }
 
+  turmaSelecionada: any = null;
+
+  editarTurma(turma: any): void {
+    this.turmaSelecionada = { ...turma };
+  }
+
+  atualizarTurma(): void {
+    const index = this.turmas.findIndex(t => t.id === this.turmaSelecionada.id);
+    if (index !== -1) {
+      this.turmas[index] = { ...this.turmaSelecionada };
+      alert('Turma atualizada com sucesso!');
+    }
+    this.turmaSelecionada = null;
+  }
+
+  cancelarEdicao(): void {
+    this.turmaSelecionada = null;
+  }
+
+  excluirTurma(id: number): void {
+    const confirmacao = confirm('Tem certeza que deseja excluir esta turma?');
+    if (confirmacao) {
+      this.turmas = this.turmas.filter(t => t.id !== id);
+      alert(`Turma com ID ${id} excluída com sucesso!`);
+    }
+  }
+
   ngOnInit(): void {
     this.turmaService.getTurmas().subscribe({
       next: (data) => this.turmas = data,

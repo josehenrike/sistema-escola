@@ -22,10 +22,39 @@
                 <td>{{ disciplina.periodo }}</td>
                 <td>{{ getStatusLabel(disciplina.status) }}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm">Editar</button>
-                    <button class="btn btn-danger btn-sm">Excluir</button>
+                    <button class="btn btn-primary btn-sm" (click)="editarDisciplina(disciplina)">Editar</button>
+                    <button class="btn btn-danger btn-sm" (click)="excluirDisciplina(disciplina.id)">Excluir</button>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    <div *ngIf="disciplinaSelecionada" class="form-container">
+        <h3>Editar Disciplina</h3>
+        <form (ngSubmit)="atualizarDisciplina()">
+            <div>
+                <label>ID:</label>
+                <input [(ngModel)]="disciplinaSelecionada.codigo" name="codigo" class="form-control" required />
+            </div>
+            <div>
+                <label>Nome:</label>
+                <input [(ngModel)]="disciplinaSelecionada.nome" name="nome" class="form-control" required />
+            </div>
+            <div>
+                <label>Periodo:</label>
+                <input [(ngModel)]="disciplinaSelecionada.periodo" name="periodo" class="form-control" required />
+            </div>
+            <div>
+                <label>Status:</label>
+                <select [(ngModel)]="disciplinaSelecionada.status" name="status" class="form-control">
+                    <option [value]="true">Ativo</option>
+                    <option [value]="false">Inativo</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarEdicao()">Cancelar</button>
+            </div>
+        </form>
+    </div>
 </div>

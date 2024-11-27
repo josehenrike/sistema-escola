@@ -12,6 +12,7 @@ import { DisciplinaComponent } from './disciplina/disciplina.component';
 import { SalaComponent } from './sala/sala.component';
 import { TurmaComponent } from './turma/turma.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RelatorioComponent } from './relatorio/relatorio.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

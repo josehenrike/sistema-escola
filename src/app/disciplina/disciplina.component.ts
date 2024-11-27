@@ -15,6 +15,33 @@ export class DisciplinaComponent implements OnInit {
     return status === 1 ? 'Ativo' : 'Inativo';
   }
 
+  disciplinaSelecionada: any = null;
+
+  editarDisciplina(disciplina: any): void {
+    this.disciplinaSelecionada = { ...disciplina };
+  }
+
+  atualizarDisciplina(): void {
+    const index = this.disciplinas.findIndex(d => d.id === this.disciplinaSelecionada.id);
+    if (index !== -1) {
+      this.disciplinas[index] = { ...this.disciplinaSelecionada };
+      alert('Disciplina atualizada com sucesso!');
+    }
+    this.disciplinaSelecionada = null;
+  }
+
+  cancelarEdicao(): void {
+    this.disciplinaSelecionada = null;
+  }
+
+  excluirDisciplina(id: number): void {
+    const confirmacao = confirm('Tem certeza que deseja excluir esta disciplina?');
+    if (confirmacao) {
+      this.disciplinas = this.disciplinas.filter(d => d.id !== id);
+      alert(`Disciplina com ID ${id} excluída com sucesso!`);
+    }
+  }
+
   ngOnInit(): void {
     this.loadDisciplinas();
   }

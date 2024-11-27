@@ -8,8 +8,8 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Local</th>
                 <th>Capacidade</th>
+                <th>Local</th>
                 <th>Status</th>
                 <th>Ações</th>
             </tr>
@@ -18,14 +18,45 @@
             <tr *ngFor="let sala of salas">
                 <td>{{ sala.id }}</td>
                 <td>{{ sala.nome }}</td>
-                <td>{{ sala.local }}</td>
                 <td>{{ sala.capacidade }}</td>
+                <td>{{ sala.local }}</td>
                 <td>{{ getStatusLabel(sala.status) }}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm">Editar</button>
-                    <button class="btn btn-danger btn-sm">Excluir</button>
+                    <button class="btn btn-primary btn-sm" (click)="editarSala(sala)">Editar</button>
+                    <button class="btn btn-danger btn-sm" (click)="excluirSala(sala.id)">Excluir</button>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    <!-- Formulário de Edição -->
+    <div *ngIf="salaSelecionada" class="form-container">
+        <h3>Editar Sala</h3>
+        <form (ngSubmit)="atualizarSala()">
+            <div>
+                <label>Nome:</label>
+                <input [(ngModel)]="salaSelecionada.nome" name="nome" class="form-control" required />
+            </div>
+            <div>
+                <label>Capacidade:</label>
+                <input [(ngModel)]="salaSelecionada.capacidade" type="number" name="capacidade" class="form-control"
+                    required />
+            </div>
+            <div>
+                <label>Local:</label>
+                <input [(ngModel)]="salaSelecionada.local" name="nome" class="form-control" required />
+            </div>
+            <div>
+                <label>Status:</label>
+                <select [(ngModel)]="salaSelecionada.status" name="status" class="form-control">
+                    <option [value]="true">Ativo</option>
+                    <option [value]="false">Inativo</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarEdicao()">Cancelar</button>
+            </div>
+        </form>
+    </div>
 </div>

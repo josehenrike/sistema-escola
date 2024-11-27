@@ -9,7 +9,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Dia da Semana</th>
-                <th>Inicio</th>
+                <th>Início</th>
                 <th>Fim</th>
                 <th>Ações</th>
             </tr>
@@ -22,10 +22,42 @@
                 <td>{{ turma.inicio }}</td>
                 <td>{{ turma.fim }}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm">Editar</button>
-                    <button class="btn btn-danger btn-sm">Excluir</button>
+                    <button class="btn btn-primary btn-sm" (click)="editarTurma(turma)">Editar</button>
+                    <button class="btn btn-danger btn-sm" (click)="excluirTurma(turma.id)">Excluir</button>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    <div *ngIf="turmaSelecionada" class="form-container">
+        <h3>Editar Turma</h3>
+        <form (ngSubmit)="atualizarTurma()">
+            <div>
+                <label>Nome:</label>
+                <input [(ngModel)]="turmaSelecionada.nome" name="nome" class="form-control" required />
+            </div>
+            <div>
+                <label>Dia da Semana:</label>
+                <select [(ngModel)]="turmaSelecionada.dia" name="dia" class="form-control" required>
+                    <option value="Segunda-feira">Segunda-feira</option>
+                    <option value="Terça-feira">Terça-feira</option>
+                    <option value="Quarta-feira">Quarta-feira</option>
+                    <option value="Quinta-feira">Quinta-feira</option>
+                    <option value="Sexta-feira">Sexta-feira</option>
+                </select>
+            </div>
+            <div>
+                <label>Início:</label>
+                <input [(ngModel)]="turmaSelecionada.inicio" type="time" name="inicio" class="form-control" required />
+            </div>
+            <div>
+                <label>Fim:</label>
+                <input [(ngModel)]="turmaSelecionada.fim" type="time" name="fim" class="form-control" required />
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarEdicao()">Cancelar</button>
+            </div>
+        </form>
+    </div>
 </div>

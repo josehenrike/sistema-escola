@@ -9,7 +9,6 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>CPF</th>
-                <th>Titulação</th>
                 <th>Status</th>
                 <th>Ações</th>
             </tr>
@@ -19,13 +18,37 @@
                 <td>{{ professor.id }}</td>
                 <td>{{ professor.nome }}</td>
                 <td>{{ professor.cpf }}</td>
-                <td>{{ professor.titulacao }}</td>
                 <td>{{ getStatusLabel(professor.status) }}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm">Editar</button>
-                    <button class="btn btn-danger btn-sm">Excluir</button>
+                    <button class="btn btn-primary btn-sm" (click)="editarProfessor(professor)">Editar</button>
+                    <button class="btn btn-danger btn-sm" (click)="excluirProfessor(professor.id)">Excluir</button>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    <div *ngIf="professorSelecionado" class="form-container">
+        <h3>Editar Professor</h3>
+        <form (ngSubmit)="atualizarProfessor()">
+            <div>
+                <label>Nome:</label>
+                <input [(ngModel)]="professorSelecionado.nome" name="nome" class="form-control" required />
+            </div>
+            <div>
+                <label>CPF:</label>
+                <input [(ngModel)]="professorSelecionado.cpf" name="cpf" class="form-control" required />
+            </div>
+            <div>
+                <label>Status:</label>
+                <select [(ngModel)]="professorSelecionado.status" name="status" class="form-control">
+                    <option [value]="true">Ativo</option>
+                    <option [value]="false">Inativo</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="cancelarEdicao()">Cancelar</button>
+            </div>
+        </form>
+    </div>
 </div>
